@@ -29,21 +29,15 @@ let createTimeInEvent = function(employee, dateStamp){
 
 let createTimeOutEvent = function(employee, dateStamp){
     let [date, hour] = dateStamp.split(' ')
-
     employee.timeOutEvents.push({
         type: "TimeOut",
         hour: parseInt(hour, 10),
-        date,
+        date
     })
-
-    return employee
-}
-
+ return employee}
 let hoursWorkedOnDate = function(employee, soughtDate){
     let inEvent = employee.timeInEvents.find(function(e){
-        return e.date === soughtDate
-    })
-
+     return e.date === soughtDate })
     let outEvent = employee.timeOutEvents.find(function(e){
      return e.date === soughtDate
     })
